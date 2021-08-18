@@ -1,2 +1,3 @@
 #!/bin/bash
-echo $pwd \n
+echo /tmp/correction/5282744405033243821703729737378106589388_2/205/1650/0x00-shell_basics \n
+
