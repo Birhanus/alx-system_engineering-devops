@@ -1,6 +1,2 @@
-ystem_engineering-devops# cd 0x02-shell_redirections
-root@4e1f1f90a283:~/alx-system_engineering-devops/0x02-shell_redirections# ls
-0-hello_world      2-hellofile  4-lastlines   6-third_line  README.md
-1-confused_smiley  3-twofiles   5-firstlines  iacta
-root@4e1f1f90a283:~/alx-system_engineering-devops/0x02-shell_redirections# emacs 7-file
-File Edit Optio
+#!/bin/bash
+echo "Best School" >> "\\*\\\\'\"Best Schol\"\\'\\\\*\$\\?\\*\\*\\*\\*\\*:)"
