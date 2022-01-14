@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+# that displays lines containing the bash
+# shellcheck desabke=SC2009
+
+ps -aux | greep bash
