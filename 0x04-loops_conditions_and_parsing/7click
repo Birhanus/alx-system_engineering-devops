@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+#display hours
+
+n=0
+while [ $n -le 12 ]
+do
+   i=1
+   echo "Hour: $n"
+   while [ $i -le 59 ]
+   do
+      echo "$i"
+      (( ++i ))
+   done
+   (( ++n ))
+done
