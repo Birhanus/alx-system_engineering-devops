@@ -2,4 +2,4 @@
 #match rgular experssion
 
 def matchexp(a=#{ARGV[0]})
-             a =~ /School(.*)/
+             puts a =~ /School(.*)/
