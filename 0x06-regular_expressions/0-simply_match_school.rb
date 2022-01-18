@@ -1,5 +1,4 @@
 #!/usr/bin/env ruby
 #match rgular experssion
 
-def matchexp(a=#{ARGV[0]})
-             puts a =~ /School(.*)/
+puts ARGV[0].scan(/School/).join
