@@ -1,7 +1,0 @@
-# Install a package using Puppet 
-
-package {'puppet-lint':
-  ensure   => 'present',
-  provider => 
-
-}
