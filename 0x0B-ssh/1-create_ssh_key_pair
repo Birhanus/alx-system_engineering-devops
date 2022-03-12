@@ -1,8 +1,4 @@
 #!/usr/bin/env bash
 # Create an SSH key pair
-# Name of created pivate key school
-# Number of bits in the created key 2096
-# The created key protected by the passphrase betty
-
 ssh-keygen -b 4096 -N betty -f school
 
