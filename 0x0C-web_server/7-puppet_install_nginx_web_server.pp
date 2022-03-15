@@ -1,10 +1,20 @@
-# Install Nginx web server using Puppet
-
-exec {'nginx_install':
-	  command  => 'sudo apt-get -y update ; sudo apt-get -y install nginx ; echo "Holberton School" | sudo tee /var/www/html/index.html',
-		     provider => shell,
+# install nginx
+package { 'nginx':
+	  ensure => installed,
 }
-exec {'nginx_full':
-	  command  => 'sudo sed -i "30i \\\tlocation /redirect_me {\n\t\treturn 301 https://www.youtube.com/watch?v=ykIRWx1RcOE&list=PLj0msIsUsJ05YNJ7c6Ydev1lZmTqS5eyX;\n}" /etc/nginx/sites-available/default ; sudo service nginx restart',
-		     provider => shell,
+
+file_line { 'aaaaa':
+	  ensure => 'present',
+		   path   => '/etc/nginx/sites-available/default',
+		     after  => 'listen 80 default_server;',
+		       line   => 'rewrite ^/redirect_me https://www.youtube.com/watch?v=ykIRWx1RcOE&list=PLj0msIsUsJ05YNJ7c6Ydev1lZmTqS5eyX permanent;',
+}
+
+file { '/var/www/html/index.html':
+	  content => 'Hello World!',
+}
+
+service { 'nginx':
+	  ensure  => running,
+		    require => Package['nginx'],
 }
