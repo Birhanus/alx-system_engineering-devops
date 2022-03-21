@@ -37,7 +37,7 @@ listen hbnb
     option httpclose
     option forwardfor
     server 1650-web-01 34.237.160.126 check
-    server 1319-web-02 44.201.91.238 check
+    server 1650-web-02 44.201.91.238 check
 " >> /etc/haproxy/haproxy.cfg
 
 sudo service haproxy start
