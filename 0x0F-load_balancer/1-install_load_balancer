@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
-# Installs HAProxy
-# Distribute requests using a roundrobin algorithm
-# Enables management via the init script.
+# Installs HAProxy version 1.8 with the following configurations:
+#+    Enables management via the init script.
+#+    Distributes requests using a round-robin algorithm.
 
 sudo apt-get -y update
 sudo apt-get -y upgrade
@@ -16,7 +16,6 @@ printf %s "global
     maxconn 2000
     user haproxy
     group haproxy
-
 defaults
     log     global
     mode    http
@@ -27,7 +26,6 @@ defaults
     timeout connect  5000
     timeout client  10000
     timeout server  10000
-
 listen hbnb
     bind 0.0.0.0:80
     mode http
@@ -36,7 +34,7 @@ listen hbnb
     balance roundrobin
     option httpclose
     option forwardfor
-    server 1650-web-01 34.237.160.126 check
+    server 1650-web-01 35.237.160.126 check
     server 1650-web-02 44.201.91.238 check
 " >> /etc/haproxy/haproxy.cfg
 
