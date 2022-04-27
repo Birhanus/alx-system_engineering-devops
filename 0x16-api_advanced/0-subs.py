@@ -9,14 +9,14 @@ BASE_URL = 'https://www.reddit.com'
 def number_of_subscribers(subreddit):
     """Retrieves the number of subscribers in a given subreddit."""
     api_headers = {
-	    'Accept': 'application/json',
+            'Accept': 'application/json',
             'User-Agent': ' '.join([
-            'Mozilla/5.0 (Windows NT 10.0; Win64; x64)',
-            'AppleWebKit/537.36 (KHTML, like Gecko)',
-            'Chrome/97.0.4692.71',
-            'Safari/537.36',
-            'Edg/97.0.1072.62'
-          ])
+                'Mozilla/5.0 (Windows NT 10.0; Win64; x64)',
+                'AppleWebKit/537.36 (KHTML, like Gecko)',
+                'Chrome/97.0.4692.71',
+                'Safari/537.36',
+                'Edg/97.0.1072.62'
+               ])
     }
     res = requests.get(
         '{}/r/{}/about/.json'.format(BASE_URL, subreddit),
@@ -26,5 +26,3 @@ def number_of_subscribers(subreddit):
     if res.status_code == 200:
         return res.json()['data']['subscribers']
         return 0
-
-
